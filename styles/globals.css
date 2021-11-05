@@ -1,10 +1,25 @@
+:root {
+  --color-brand-primary: #4DACE4;
+  --color-brand-secondary: #92F6C1;
+  --color-brand-tetriary: #1E2A5B;
+  --color-brand-cool-gray: #788795;
+  --color-brand-primary-lighten: #F3F3F3;
+  --color-black: #141313;
+  --color-white: #ffffff;
+  --color-neutral-1: #222222;
+  --color-neutral-2: #717171;
+  --color-neutral-3: #A0A0A0;
+  --color-neutral-4: #D0D0D0;
+  --color-neutral-5: #EEEEEE;
+
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
 
 a {
   color: inherit;
@@ -13,4 +28,11 @@ a {
 
 * {
   box-sizing: border-box;
+  font-family: Nunito, Segoe UI, Roboto, Oxygen, Ubuntu, Fira Sans, sans-serif;
+  color: var(--black);
 }
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

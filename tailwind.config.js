@@ -1,9 +1,36 @@
+const colors = require('tailwindcss/colors')
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      red: colors.red,
+      blue: colors.sky,
+      yellow: colors.amber,
+      black: 'var(--color-black)',
+      white: 'var(--color-white)',
+      primary: 'var(--color-brand-primary)',
+      secondary: 'var(--color-brand-secondary)',
+      tetriary: 'var(--color-brand-tetriary)',
+      coolGray: 'var(--color-brand-cool-gray)',
+      primaryLigthen: 'var(--color-brand-primary-lighten)',
+      neutral: {
+        1: 'var(--color-neutral-1)',
+        2: 'var(--color-neutral-2)',
+        3: 'var(--color-neutral-3)',
+        4: 'var(--color-neutral-4)',
+        5: 'var(--color-neutral-5)',
+      },
+    },
+    extend: {
+      borderWidth: {
+        1: '1px',
+      },
+    },
   },
   variants: {
     extend: {},
