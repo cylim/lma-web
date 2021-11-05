@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Header from '../components/Header'
 
 const Home: NextPage = () => {
   return (
@@ -10,12 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+        <Header />
 
         <p className="mt-3 text-2xl">
           Get started by editing{' '}
