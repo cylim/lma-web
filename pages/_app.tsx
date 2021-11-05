@@ -1,10 +1,22 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import 'tailwindcss/tailwind.css'
+import { NextIntlProvider } from 'next-intl';
+import { useEffect } from 'react';
 
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return <NextIntlProvider messages={pageProps.messages} formats={{
+    dateTime: {
+      short: {
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric'
+      }
+    }
+  }}>
+    <Component {...pageProps} />
+  </NextIntlProvider>
 }
 
 export default MyApp

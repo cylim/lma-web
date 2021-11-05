@@ -1,12 +1,24 @@
-import type { NextPage } from 'next'
+import type { GetStaticPropsContext, NextPage } from 'next'
 import Head from 'next/head'
+import { useTranslations } from 'use-intl';
 import Header from '../components/Header'
 
+export async function getStaticProps({ locale }: GetStaticPropsContext) {
+  const localeData = await import(`../utils/locales/${locale}.json`)
+  return {
+    props: {
+      messages: JSON.parse(JSON.stringify(localeData))
+    }
+  };
+}
+
 const Home: NextPage = () => {
+  const t = useTranslations('Home');
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
       <Head>
-        <title>Create Next App</title>
+        <title>{t('title')}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
