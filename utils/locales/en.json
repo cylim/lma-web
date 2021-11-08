@@ -1,6 +1,6 @@
 {
   "Home": {
-    "title": "LMA Art Home"
+    "title": "Home"
   },
   "Header": {
     "title": "Art Gallery",
@@ -9,7 +9,6 @@
     "Connect": "Connect"
   },
   "Footer": {
-    "title": "Art Gallery",
     "description": "LMA-ART-GALLERY was the first Art NFT platform on Harmony Network launched in 2020. After an amazing year the platform offers now to new artists page collection creation, artist brand label, dedicated page/ brand, and dedicated NFT marketplace.",
     "Community:": "Community:",
     "Help Center": "Help Center",
@@ -21,5 +20,11 @@
     "Youtube": "Youtube",
     "Learn More": "Learn More",
     "Telegram": "Telegram"
+  },
+  "Templates": {
+    "title_1": "Pick the template",
+    "title_2": "you love",
+    "Start with": "Start with {title}",
+    "Preview": "Preview"
   }
 }

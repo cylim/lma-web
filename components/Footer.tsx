@@ -1,30 +1,46 @@
 import type { NextPage } from 'next'
-import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslations } from 'use-intl';
+
+interface LinkProps {
+  url: string
+  title: string
+  target: string
+}
+
+const communities = [
+  { url: '#', title: 'Help Center', target: '_self' },
+  { url: '#', title: 'LMA - DAO', target: '_self' },
+  { url: '#', title: 'Snapshot Votation', target: '_self' },
+  { url: '#', title: 'LMA token', target: '_self' },
+]
+
+const social = [
+  { url: '#', title: 'Twitter', target: '_self' },
+  { url: '#', title: 'Telegram', target: '_self' },
+  { url: '#', title: 'Youtube', target: '_self' },
+  { url: '#', title: 'Learn More', target: '_self' },
+]
 
 const Footer: NextPage = () => {
   const t = useTranslations('Footer');
 
+  const renderLink = (item: LinkProps) => <a key={item.title} href={item.url} target={item.target} className="hover:text-primary">{t(item.title)}</a>
+
   return (
     <footer className="flex flex-col items-center justify-center w-full px-20 mt-20 pt-20 bg-neutral-5">
       <div className="flex flex-row items-center justify-between">
-          <img src="/logo.png" alt="Vercel Logo" className="h-28 mr-8" />
-          <div>
+        <Image src="/logo.png" alt="LMA Logo"  width={100} height={280}/>
+        <div className="pl-8">
           <span className="font-bold text-base">{t('description')}</span>
-          </div>
+        </div>
         <div className="flex flex-col text-sm pl-10 leading-6 min-w-max">
           <h4 className="font-bold leading-7">{t('Community:')}</h4>
-            <a href="#">{t('Help Center')}</a>
-            <a href="#">{t('LMA - DAO')}</a>
-            <a href="#">{t('Snapshot Votation')}</a>
-            <a href="#">{t('LMA token')}</a>
+          {communities.map(renderLink)}
           </div>
         <div className="flex flex-col text-sm pl-10 leading-6 min-w-max">
           <h4 className="font-bold leading-7">{t('Follow:')}</h4>
-          <a href="#">{t('Twitter')}</a>
-          <a href="#">{t('Telegram')} </a>
-          <a href="#">{t('Youtube')}</a>
-          <a href="#">{t('Learn More')}</a>
+          {social.map(renderLink)}
           </div>
       </div>
 

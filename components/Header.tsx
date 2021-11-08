@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'use-intl';
 
@@ -9,7 +10,7 @@ const Header: NextPage = () => {
     <div className="flex flex-row flex-wrap items-center justify-between w-full px-20 py-10 text-center">
       <Link href="/" passHref>
         <a className="flex flex-row items-center">
-          <img src="/logo.png" alt="Vercel Logo" className="h-12" />
+          <Image src="/logo.png" alt="LMA Logo" width={20} height={40} />
           <span className="pl-5 text-xl font-bold">{t('title')}</span>
         </a>
       </Link>

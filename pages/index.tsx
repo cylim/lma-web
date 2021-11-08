@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useTranslations } from 'use-intl';
 import Footer from '../components/Footer';
 import Header from '../components/Header'
+import Constants from '../utils/constants';
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const localeData = await import(`../utils/locales/${locale}.json`)
@@ -19,8 +20,7 @@ const Home: NextPage = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Head>
-        <title>{t('title')}</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>{t('title')} - {Constants.appName}</title>
       </Head>
 
         <Header />

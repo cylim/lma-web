@@ -5,6 +5,9 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'media', // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      sans: ['Nunito Sans', 'Segoe UI', 'Roboto', 'Oxygen', 'Fira Sans', 'sans-serif'],
+    },
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
@@ -33,7 +36,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      backdropBlur: ['hover', 'focus'],
+      backdropOpacity: ['hover', 'focus'],
+    },
   },
   plugins: [],
 }
