@@ -7,4 +7,12 @@ export const Constants = {
   },
 }
 
+export const Templates = [
+  {title: 'Template 1', imageURL: '/templates/template1.png', _id: '1'},
+  {title: 'Template 2', imageURL: '/templates/template2.png', _id: '2'},
+  {title: 'Template 3', imageURL: '/templates/template3.png', _id: '3'},
+  {title: 'Template 4', imageURL: '/templates/template4.png', _id: '4'},
+  {title: 'Template 5', imageURL: '/templates/template5.png', _id: '5'},
+]
+
 export default Constants

@@ -6,11 +6,11 @@ class MyDocument extends Document {
       <Html>
         <Head>
           <link
-            href="https://fonts.googleapis.com/css2?family=Nunito&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
             rel="stylesheet"
           />
           <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=optional"
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap"
             rel="stylesheet"
           />
           <link rel="icon" href="/favicon.ico" />

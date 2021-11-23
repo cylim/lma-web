@@ -22,7 +22,6 @@ const customStyles = {
 
 Modal.setAppElement('#modal-root');
 
-
 const Header: NextPage = () => {
   const t = useTranslations('Header');
   // const [web3, web3Error] = useWeb3();

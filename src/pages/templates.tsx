@@ -1,8 +1,7 @@
 import type { GetStaticPropsContext, NextPage } from 'next'
-import Link from 'next/link'
 import Head from 'next/head'
 import { useTranslations } from 'use-intl';
-import Constants from '../utils/constants';
+import Constants, { Templates } from '../utils/constants';
 import Header from '../components/Header';
 import SectionHeader from '../components/SectionHeader';
 import TemplateCard, { TemplateCardProps } from '../components/TemplateCard';
@@ -17,13 +16,7 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
   };
 }
 
-const Templates = [
-  { title: 'Template 1', imageURL: '/templates/template1.png', _id: '1'},
-  { title: 'Template 2', imageURL: '/templates/template2.png', _id: '2'},
-  { title: 'Template 3', imageURL: '/templates/template3.png', _id: '3'},
-  { title: 'Template 4', imageURL: '/templates/template4.png', _id: '4'},
-  { title: 'Template 5', imageURL: '/templates/template5.png', _id: '5'},
-]
+
 
 const Template: NextPage = () => {
   const t = useTranslations('Templates');

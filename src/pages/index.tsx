@@ -1,9 +1,23 @@
 import type { GetStaticPropsContext, NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslations } from 'use-intl';
 import Footer from '../components/Footer';
 import Header from '../components/Header'
-import Constants from '../utils/constants';
+import LatestPageListItem, { LatestPageListItemProps } from '../components/LatestPageListIitem';
+import StepGuide from '../components/StepGuide';
+import TemplateCard, { TemplateCardProps } from '../components/TemplateCard';
+import Constants, { Templates } from '../utils/constants';
+
+const Pages = [
+  { _id: 'Justin', name: 'Justin', site: 'https://example.com/pages/justin' },
+  { _id: 'Amber', name: 'Amber', site: 'https://example.com/pages/amber' },
+  { _id: 'Kat', name: 'Kat', site: 'https://example.com/pages/kat' },
+  { _id: 'Andrew', name: 'Andrew', site: 'https://example.com/pages/andrew' },
+  { _id: 'Steph', name: 'Steph', site: 'https://example.com/pages/steph' },
+  { _id: 'Michael', name: 'Michael', site: 'https://example.com/pages/michael' },
+]
 
 export async function getStaticProps({ locale }: GetStaticPropsContext) {
   const localeData = await import(`../utils/locales/${locale}.json`)
@@ -17,63 +31,71 @@ export async function getStaticProps({ locale }: GetStaticPropsContext) {
 const Home: NextPage = () => {
   const t = useTranslations('Home');
 
+  const renderLatestPage = (item: LatestPageListItemProps) => <LatestPageListItem key={item._id} {...item} />
+  const renderTemplateCover = (item: TemplateCardProps) => <TemplateCard key={item._id} {...item} withoutTitle />
+
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-primaryLigthen">
       <Head>
         <title>{t('title')} - {Constants.appName}</title>
       </Head>
-
-        <Header />
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
+      <Header />
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center ">
+        <p className="font-bold font-sans text-l tracking-wider pt-20">artist label marketplace</p>
+        <h1 className="font-extrabold font-sans text-5xl tracking-wider leading-normal">
+          Create your own
+        </h1>
+        <p className="font-extrabold font-sans text-5xl tracking-wider leading-normal">
+          individual NFT marketplace.
         </p>
+        <button className="flex flex-row font-bold border-1 bg-black p-2 hover:text-black hover:bg-white items-center justify-center mt-5 mb-10 text-white w-60">
+          <Link href="/templates" passHref>
+            <a>Start Now</a>
+          </Link>
+        </button>
+        <Image src="https://picsum.photos/840/525" alt="main photo" height={525} width={840} />
+        <StepGuide />
 
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
+        <div className="w-full py-20 overflow-x-hidden">
+          <div className="flex flex-row">
+            <div className="grid grid-cols-2 gap-x-3 gap-y-3 w-full">
+              <div className="flex flex-col">
+                <h2 className="text-left font-extrabold font-sans text-5xl">Choose a</h2>
+                <h2 className="text-left font-extrabold font-sans text-5xl">template that</h2>
+                <h2 className="text-left font-extrabold font-sans text-5xl">fits your needs.</h2>
+              </div>
+              {Templates.slice(0, 1).map(renderTemplateCover)}
+            </div>
+            <div className="absolute -right-64 h-auto w-80">
+            {Templates.slice(1, 2).map(renderTemplateCover)}
+            </div>
+          </div>
+          <div className="flex flex-row pt-3">
+            <div className="absolute -left-64 h-auto w-80">
+              {Templates.slice(2, 3).map(renderTemplateCover)}
+            </div>
+            <div className="grid grid-cols-2 gap-x-3 gap-y-3 w-full">
+              {Templates.slice(3, 5).map(renderTemplateCover)}
+            </div>
+          </div>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <Link href="/templates" passHref>
+            <a className="text-right flex flex-row content-center justify-end pt-10">
+              <span className="pr-5 font-sans text-xl text-bold">
+                {t('Explore ALL templates')}
+              </span>
+              <Image src="/icons/arrow-right.png" alt={'Go to templage page'} height={18} width={36} objectFit="contain" />
+            </a>
+          </Link>
         </div>
+
+        <div className="w-full pt-20 pb-10">
+          <h2 className="text-right font-extrabold font-sans text-5xl pb-10">Your Artists</h2>
+          <div className="w-full divide-y border-t border-b">
+            {Pages.map(renderLatestPage)}
+          </div>
+        </div>
+
       </main>
 
       <Footer />
