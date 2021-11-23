@@ -5,7 +5,7 @@
 [context.dev.environment]
   NODE_ENV = "development"
 
-[[context.deploy-preview].environment]
+[context.deploy-preview.environment]
   NODE_ENV = "development"
 
 [context.branch-deploy.environment]
