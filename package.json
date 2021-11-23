@@ -9,16 +9,20 @@
   },
   "dependencies": {
     "@harmony-js/core": "^0.1.57",
+    "@metamask/detect-provider": "^1.2.0",
+    "bn.js": "^5.2.0",
     "next": "12.0.4",
     "next-intl": "^2.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-modal": "^3.14.4",
     "tslib": "^2.3.1",
     "web3": "^1.6.1"
   },
   "devDependencies": {
     "@types/node": "16.11.8",
     "@types/react": "17.0.35",
+    "@types/react-modal": "^3.13.1",
     "autoprefixer": "^10.4.0",
     "eslint": "7",
     "eslint-config-next": "12.0.4",

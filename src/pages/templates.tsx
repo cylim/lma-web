@@ -38,7 +38,7 @@ const Template: NextPage = () => {
       <Header />
       <main className="flex flex-col w-full flex-1 px-20 ">
         <SectionHeader title={t('title_1')} subtitle={t('title_2')}/>
-        <div className="grid gap-x-4 gap-y-6 grid-cols-1 pt-20 md:grid-cols-2">
+        <div className="grid gap-x-8 gap-y-16 grid-cols-1 pt-20 md:grid-cols-2">
           {Templates.map(renderTemplate)}
         </div>
       </main>
