@@ -4,10 +4,10 @@ import Link from 'next/link'
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { useTranslations } from 'use-intl';
-import Constants from '../utils/constants';
 import IconButton from './IconButton';
 import { useAccount } from '../utils/useAccount';
 import { truncateAddressString } from '../utils/numbers';
+import ErrorHeader from './ErrorHeader';
 
 const customStyles = {
   content: {
@@ -24,7 +24,6 @@ Modal.setAppElement('#modal-root');
 
 const Header: NextPage = () => {
   const t = useTranslations('Header');
-  // const [web3, web3Error] = useWeb3();
   const [showModal, setShowModal] = useState(false)
   const [connect, account, accError] = useAccount()
 
@@ -32,16 +31,14 @@ const Header: NextPage = () => {
   const toggleConnect = () => setShowModal(!showModal)
   const closeModal = () => setShowModal(false)
 
-  const handleMetamask = () => { 
-    connect('metamask')
-    closeModal()
-  }
-  const handleOneWallet =() => { 
-    connect('onewallet') 
+  const handleConnect = (title: string) => () => {
+    connect(title)
     closeModal()
   }
 
   return (
+    <>
+    <ErrorHeader status={accError} />
     <div className="flex flex-row flex-wrap items-center justify-between w-full px-20 py-10 text-center">
       <Link href="/" passHref>
         <a className="flex flex-row items-center">
@@ -67,18 +64,13 @@ const Header: NextPage = () => {
       >
         <div className="flex flex-col items-center justify-center flex-1 px-20 text-center max-w-md">
           <h1 className="font-bold text-xl py-5">{t('Connect your wallet')}</h1>
-          <IconButton title={t('Metamask')} handlePress={handleMetamask} style="my-2 w-full" icon="/icons/metamask.png"/>
-          <IconButton title={t('One Wallet')} handlePress={handleOneWallet} style="my-2 w-full" icon="/icons/harmony.png"/>
+          <IconButton title={t('Metamask')} handlePress={handleConnect('metamask')} style="my-2 w-full" icon="/icons/metamask.png"/>
+          <IconButton title={t('One Wallet')} handlePress={handleConnect('onewallet')} style="my-2 w-full" icon="/icons/harmony.png"/>
           <p className="text-sm py-1">{t('disclaimer_1')}</p>
-          {/* <p className="text-sm py-1">{t('disclaimer_2_1')}
-            <a href={Constants.harmony.metamask} className="text-primary" target='_blank' rel="noreferrer">{t('disclaimer_2_2')}</a>
-          {t('disclaimer_2_3')}</p> */}
-
-          {/* {accError ? <p>{accError}</p> : null} */}
-
         </div>
       </Modal>
     </div>
+    </>
   )
 }
 

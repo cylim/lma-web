@@ -1,8 +1,18 @@
+export const Harmony = {
+  chainURL: process.env.NODE_ENV === 'production' ? 'https://api.s0.t.hmny.io' : 'https://api.s0.b.hmny.io',
+  chainID: process.env.NODE_ENV === 'production' ? '0x63564C40' : '0x63564C40',
+  chainName: process.env.NODE_ENV === 'production' ? 'Harmony Mainnet' : 'Harmony Testnet',
+  rpcURL: process.env.NODE_ENV === 'production' ? 'https://api.harmony.one' : 'https://api.harmony.one',
+  explorerURL: process.env.NODE_ENV === 'production' ? 'https://explorer.harmony.one/#/' : 'https://explorer.harmony.one/#/',
+  token: 'ONE',
+  decimals: 18,
+}
+
 export const Constants = {
   appName: process.env.NEXT_PUBLIC_APP_NAME,
   production: process.env.NODE_ENV === 'production',
-  harmony: {
-    chainURL: process.env.NODE_ENV === 'production' ? 'https://api.s0.t.hmny.io' : 'https://api.s0.b.hmny.io',
+  harmony: Harmony,
+  tutorial: {
     metamask: 'https://docs.harmony.one/home/network/wallets/browser-extensions-wallets/metamask-wallet',
   },
 }

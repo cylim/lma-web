@@ -1,6 +1,6 @@
 import {useState} from 'react'
-import Web3 from 'web3'
 import detectEthereumProvider from '@metamask/detect-provider'
+import {Harmony} from './constants'
 const {HarmonyExtension} = require('@harmony-js/core')
 
 
@@ -29,19 +29,20 @@ export const useAccount = () => {
   }
 
   const connect = async (wallet: string) => {
+    setError(undefined)
     try {
       if (wallet === 'onewallet') {
+        if (!window.onewallet) {
+          throw new Error('WALLET_NOT_FOUND')
+        }
         const harmonyExt = await new HarmonyExtension(window.onewallet)
         const account = await harmonyExt.login()
         console.log(account)
         setAccount(account)
       } else if( wallet === 'metamask') {
-        const provider: any = await detectEthereumProvider({mustBeMetaMask: true, silent: true})
+        const provider: any = await detectEthereumProvider({mustBeMetaMask: true})
         if (!provider) {
-          throw new Error('Metamask not found')
-        }
-        if (provider !== window.ethereum) {
-          throw new Error('Do you have multiple wallets installed?')
+          throw new Error('WALLET_NOT_FOUND')
         }
 
         provider.on('accountsChanged', handleAccountsChanged)
@@ -51,7 +52,7 @@ export const useAccount = () => {
         try {
           await provider.request({
             method: 'wallet_switchEthereumChain',
-            params: [{chainId: '0x63564C40'}],
+            params: [{chainId: Harmony.chainID}],
           })
         } catch (switchError: any) {
           if (switchError.code === 4902) {
@@ -59,15 +60,15 @@ export const useAccount = () => {
               method: 'wallet_addEthereumChain',
               params: [
                 {
-                  chainId: '0x63564C40',
-                  chainName: 'Harmony Mainnet',
+                  chainId: Harmony.chainID,
+                  chainName: Harmony.chainName,
                   nativeCurrency: {
-                    name: 'ONE',
-                    symbol: 'ONE',
-                    decimals: 18,
+                    name: Harmony.token,
+                    symbol: Harmony.token,
+                    decimals: Harmony.decimals,
                   },
-                  rpcUrl: ['https://api.harmony.one'],
-                  blockExplorerUrls: ['https://explorer.harmony.one/#/'],
+                  rpcUrls: [Harmony.rpcURL],
+                  blockExplorerUrls: [Harmony.explorerURL],
                 },
               ],
             })
@@ -79,7 +80,7 @@ export const useAccount = () => {
     } catch (err: any) {
       handleDisconnected()
       console.log(err.message)
-      setError(err)
+      setError(err.message || 'Failed to connect to the wallet')
     }
   }
 
