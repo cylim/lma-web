@@ -1,9 +1,8 @@
 export const Harmony = {
-  chainURL: process.env.NODE_ENV === 'production' ? 'https://api.s0.t.hmny.io' : 'https://api.s0.b.hmny.io',
-  chainID: process.env.NODE_ENV === 'production' ? '0x63564C40' : '0x63564C40',
-  chainName: process.env.NODE_ENV === 'production' ? 'Harmony Mainnet' : 'Harmony Testnet',
-  rpcURL: process.env.NODE_ENV === 'production' ? 'https://api.harmony.one' : 'https://api.harmony.one',
-  explorerURL: process.env.NODE_ENV === 'production' ? 'https://explorer.harmony.one/#/' : 'https://explorer.harmony.one/#/',
+  chainID: process.env.NODE_ENV === 'production' ? 1666600000 : 1666700000,
+  chainName: process.env.NODE_ENV === 'production' ? 'Harmony Mainnet' : 'Harmony Testnet Shard 0',
+  rpcURL: process.env.NODE_ENV === 'production' ? 'https://api.harmony.one' : 'https://api.s0.b.hmny.io',
+  explorerURL: process.env.NODE_ENV === 'production' ? 'https://explorer.harmony.one/#/' : 'https://explorer.pops.one',
   token: 'ONE',
   decimals: 18,
 }
