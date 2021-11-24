@@ -1,7 +1,6 @@
 import type { GetServerSideProps, NextPage } from 'next'
 import Link from 'next/link';
 
-
 interface PageNftProps {
   slug: string
   nftId: string

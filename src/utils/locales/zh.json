@@ -1,5 +1,38 @@
 {
   "Home": {
-    "title": "LMA Art首页"
+    "title": "Home",
+    "Explore ALL templates": "EXPLORE ALL TEMPLATES"
+  },
+  "Header": {
+    "title": "Art Gallery",
+    "Sell Your Art": "Sell Your Art",
+    "About Us": "About Us",
+    "Connect": "Connect",
+    "Connect your wallet": "Connect your wallet",
+    "Metamask": "Metamask",
+    "One Wallet": "One Wallet",
+    "disclaimer_1": "We do not own your private keys and cannot access your funds without your confirmation",
+    "disclaimer_2_1": "You need to add ONE Harmony Network on Metamask, please follow our ",
+    "disclaimer_2_2": "documentation",
+    "disclaimer_2_3": ", using other networks will result in permanent loss"
+  },
+  "Footer": {
+    "description": "LMA-ART-GALLERY was the first Art NFT platform on Harmony Network launched in 2020. After an amazing year the platform offers now to new artists page collection creation, artist brand label, dedicated page/ brand, and dedicated NFT marketplace.",
+    "Community:": "Community:",
+    "Help Center": "Help Center",
+    "LMA - DAO": "LMA - DAO",
+    "Snapshot Votation": "Snapshot Votation",
+    "LMA token": "LMA token",
+    "Follow:": "Follow:",
+    "Twitter": "Twitter",
+    "Youtube": "Youtube",
+    "Learn More": "Learn More",
+    "Telegram": "Telegram"
+  },
+  "Templates": {
+    "title_1": "Pick the template",
+    "title_2": "you love",
+    "Start with": "Start with {title}",
+    "Preview": "Preview"
   }
 }
