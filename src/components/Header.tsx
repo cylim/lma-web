@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Modal from 'react-modal';
 import { useState } from 'react';
 import { useTranslations } from 'use-intl';
-import IconButton from './IconButton';
+import IconButton from './Button';
 import { useAccount } from '../utils/useAccount';
 import { truncateAddressString } from '../utils/numbers';
 import ErrorHeader from './ErrorHeader';
