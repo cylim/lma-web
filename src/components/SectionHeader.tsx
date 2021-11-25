@@ -11,10 +11,10 @@ const SectionHeader: NextPage<SectionHeaderProps> = ({ title, subtitle}) => {
 
   return (
     <div className="border-b py-14">
-      <h1 className="text-6xl font-bold">
+      <h1 className="text-6xl font-sans font-extrabold">
         {title}
       </h1>
-      {subtitle ? <h1 className="text-6xl font-bold">
+      {subtitle ? <h1 className="text-6xl font-sans  font-extrabold">
         {subtitle}
       </h1> : null}
     </div>

@@ -17,7 +17,7 @@ const TemplateCard: NextPage<TemplateCardProps> = ({ title, imageURL, _id, witho
       <div className="bg-local bg-cover bg-no-repeat" style={{  backgroundImage: `url(${imageURL})`}}>
         <div className="group backdrop-filter h-80 hover:backdrop-blur hover:backdrop-opacity-75">
           <div className="flex-col items-center justify-center w-full h-80 flex-1 text-center font-sans font-bold group-hover:flex hidden">
-            <Link href={`/templates/${_id}`} passHref>
+            <Link href={`/templates/${_id}/create`} passHref>
               <a className="underline leading-relaxed tracking-wider">{t('Start with', {title})}</a>
             </Link>
             <span>{t('Preview')}</span>
