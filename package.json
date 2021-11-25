@@ -10,11 +10,13 @@
   "dependencies": {
     "@harmony-js/core": "^0.1.57",
     "@metamask/detect-provider": "^1.2.0",
+    "@tailwindcss/forms": "^0.3.4",
     "bn.js": "^5.2.0",
     "next": "12.0.4",
     "next-intl": "^2.2.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.20.2",
     "react-modal": "^3.14.4",
     "tslib": "^2.3.1",
     "web3": "^1.6.1"

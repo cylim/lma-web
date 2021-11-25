@@ -41,5 +41,7 @@ module.exports = {
       backdropOpacity: ['hover', 'focus'],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
