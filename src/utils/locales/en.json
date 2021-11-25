@@ -1,7 +1,12 @@
 {
   "Home": {
     "title": "Home",
-    "Explore ALL templates": "EXPLORE ALL TEMPLATES"
+    "Explore ALL templates": "EXPLORE ALL TEMPLATES",
+    "Your Artists": "Your Artists",
+    "artist label marketplace":"artist label marketplace",
+    "Create your own": "Create your own",
+    "individual NFT marketplace.": "individual NFT marketplace.",
+    "Start Now": "Start Now"
   },
   "Header": {
     "title": "Art Gallery",
@@ -34,5 +39,22 @@
     "title_2": "you love",
     "Start with": "Start with {title}",
     "Preview": "Preview"
+  },
+  "TemplatesCreate": {
+    "title_1": "Marketplace Details",
+    "Cancel": "Cancel",
+    "Create and Proceed to the Payment": "Create and Proceed to the Payment",
+    "Brand Artist Name": "Brand Artist Name",
+    "Enter Name": "Enter Name",
+    "Description": "Description",
+    "What is this marketplace about?": "What is this marketplace about?",
+    "Custom URL Link": "Custom URL Link",
+    "Your favorite slug":"Your favorite slug",
+    "Tags": "Tags",
+    "What is the marketplace related to?": "What is the marketplace related to?",
+    "Marketplace availability": "Marketplace availability"
+  },
+  "SettingsMint": {
+    "title_1": "Add your work"
   }
 }

@@ -19,20 +19,23 @@
   "Footer": {
     "description": "LMA-ART-GALLERY was the first Art NFT platform on Harmony Network launched in 2020. After an amazing year the platform offers now to new artists page collection creation, artist brand label, dedicated page/ brand, and dedicated NFT marketplace.",
     "Community:": "Community:",
-    "Help Center": "Help Center",
-    "LMA - DAO": "LMA - DAO",
-    "Snapshot Votation": "Snapshot Votation",
-    "LMA token": "LMA token",
-    "Follow:": "Follow:",
-    "Twitter": "Twitter",
-    "Youtube": "Youtube",
-    "Learn More": "Learn More",
-    "Telegram": "Telegram"
+    "Help Center": "帮组中心",
+    "LMA - DAO": "LMA 分布式自治组织",
+    "Snapshot Votation": "投票",
+    "LMA token": "LMA 代币",
+    "Follow:": "跟随:",
+    "Twitter": "推特",
+    "Youtube": "油管",
+    "Learn More": "了解更多",
+    "Telegram": "电报"
   },
   "Templates": {
-    "title_1": "Pick the template",
-    "title_2": "you love",
+    "title_1": "选择样板",
+    "title_2": "随心所喜",
     "Start with": "Start with {title}",
     "Preview": "Preview"
+  },
+  "TemplatesCreate": {
+    "title_1": "专页详情"
   }
 }
