@@ -10,7 +10,7 @@ const SectionHeader: NextPage<SectionHeaderProps> = ({ title, subtitle}) => {
   const t = useTranslations('Header');
 
   return (
-    <div className="border-b py-14">
+    <div className="border-b py-10">
       <h1 className="text-6xl font-sans font-extrabold">
         {title}
       </h1>

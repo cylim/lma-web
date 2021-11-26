@@ -37,7 +37,7 @@ const Home: NextPage = () => {
           {t("Create your own")}
         </h1>
         <p className="font-extrabold font-sans text-5xl tracking-wider leading-normal">
-          {t("individual NFT marketplace.")}
+          {t("individual NFT marketplace")}
         </p>
         <button className="flex flex-row font-bold border-1 bg-black p-2 hover:text-black hover:bg-white items-center justify-center mt-5 mb-10 text-white w-60">
           <Link href="/templates" passHref>
