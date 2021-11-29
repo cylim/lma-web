@@ -24,4 +24,19 @@ export const Templates = [
   {title: 'Template 5', imageURL: '/templates/template5.png', _id: '5'},
 ]
 
+export const Pages = [
+  { _id: 'Justin', name: 'Justin', site: 'https://example.com/pages/justin' },
+  { _id: 'Amber', name: 'Amber', site: 'https://example.com/pages/amber' },
+  { _id: 'Kat', name: 'Kat', site: 'https://example.com/pages/kat' },
+  { _id: 'Andrew', name: 'Andrew', site: 'https://example.com/pages/andrew' },
+  { _id: 'Steph', name: 'Steph', site: 'https://example.com/pages/steph' },
+  { _id: 'Michael', name: 'Michael', site: 'https://example.com/pages/michael' },
+]
+
+export const Offers = [
+  { _id: '0x00', name: 'Art 1', offerPrice: '0' },
+  { _id: '0x01', name: 'Art 2', offerPrice: '0' },
+  { _id: '0x02', name: 'Art 3', offerPrice: '0' },
+]
+
 export default Constants

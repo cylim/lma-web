@@ -19,7 +19,11 @@
     "disclaimer_1": "We do not own your private keys and cannot access your funds without your confirmation",
     "disclaimer_2_1": "You need to add ONE Harmony Network on Metamask, please follow our ",
     "disclaimer_2_2": "documentation",
-    "disclaimer_2_3": ", using other networks will result in permanent loss"
+    "disclaimer_2_3": ", using other networks will result in permanent loss",
+    "Profile": "Profile",
+    "Analytics": "Analytics",
+    "My Artist Page": "My Artist Page",
+    "My Collections": "My Collections"
   },
   "Footer": {
     "description": "LMA-ART-GALLERY was the first Art NFT platform on Harmony Network launched in 2020. After an amazing year the platform offers now to new artists page collection creation, artist brand label, dedicated page/ brand, and dedicated NFT marketplace.",
@@ -76,5 +80,17 @@
     "Website": "Website",
     "Twitter": "Twitter",
     "Instagram": "Instagram"
+  },
+  "User": {
+    "Your Artists": "Your Artists",
+    "Offer": "Offer",
+    "Create new collection": "Create new collection",
+    "Create new art": "Create new art",
+    "My Collections": "My Collections",
+    "Add Work": "Add Work"
+  },
+  "Offer": {
+    "DECLINE": "DECLINE",
+    "ACCEPT": "ACCEPT"
   }
 }

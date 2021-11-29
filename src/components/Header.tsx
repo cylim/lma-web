@@ -22,6 +22,14 @@ const customStyles = {
 
 Modal.setAppElement('#modal-root');
 
+
+const UserRoutes = [
+  {routes: '/settings/profile', label: 'Profile'},
+  {routes: '/settings/stats', label: 'Analytics'},
+  {routes: '/user/<<id>>/pages', label: 'My Artist Page'},
+  {routes: '/user/<<id>>', label: 'My Collections'},
+]
+
 const Header: NextPage = () => {
   const t = useTranslations('Header');
   const [showModal, setShowModal] = useState(false)
@@ -35,6 +43,17 @@ const Header: NextPage = () => {
     connect(title)
     closeModal()
   }
+
+  const renderMenuItem = (item) => <Link href={item?.routes.replace('<<id>>', account.address)} passHref>
+    <a className="hover:text-primary">{t(item.label)}</a>
+  </Link>
+
+  const renderUserName = () => <div className="group flex flex-col items-center text-base">
+    <span className="group-hover:underline font-bold">{truncateAddressString(account.address)}</span>
+    <div className="hidden absolute group-hover:flex flex-col pt-10 gap-y-2 items-center justify-center">
+      {UserRoutes.map(renderMenuItem)}
+    </div>
+  </div>
 
   return (
     <>
@@ -54,7 +73,7 @@ const Header: NextPage = () => {
         <Link href="/about" passHref>
           <a className="mr-10  hover:text-primary">{t('About Us')}</a>
         </Link>
-        {account ? <p>{truncateAddressString(account.address)}</p>: <IconButton title={t('Connect')} handlePress={toggleConnect} />}
+        {account ? renderUserName() : <IconButton title={t('Connect')} handlePress={toggleConnect} />}
         
       </div>
       <Modal

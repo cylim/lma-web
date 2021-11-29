@@ -8,16 +8,9 @@ import Header from '../components/Header'
 import LatestPageListItem, { LatestPageListItemProps } from '../components/LatestPageListIitem';
 import StepGuide from '../components/StepGuide';
 import TemplateCard, { TemplateCardProps } from '../components/TemplateCard';
-import Constants, { Templates } from '../utils/constants';
+import Constants, { Pages, Templates } from '../utils/constants';
 
-const Pages = [
-  { _id: 'Justin', name: 'Justin', site: 'https://example.com/pages/justin' },
-  { _id: 'Amber', name: 'Amber', site: 'https://example.com/pages/amber' },
-  { _id: 'Kat', name: 'Kat', site: 'https://example.com/pages/kat' },
-  { _id: 'Andrew', name: 'Andrew', site: 'https://example.com/pages/andrew' },
-  { _id: 'Steph', name: 'Steph', site: 'https://example.com/pages/steph' },
-  { _id: 'Michael', name: 'Michael', site: 'https://example.com/pages/michael' },
-]
+
 
 const Home: NextPage = () => {
   const t = useTranslations('Home');
@@ -91,7 +84,6 @@ const Home: NextPage = () => {
 
       <Footer />
     </div>
-
   )
 }
 

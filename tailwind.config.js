@@ -39,6 +39,7 @@ module.exports = {
     extend: {
       backdropBlur: ['hover', 'focus'],
       backdropOpacity: ['hover', 'focus'],
+      display: ["group-hover"],
     },
   },
   plugins: [
