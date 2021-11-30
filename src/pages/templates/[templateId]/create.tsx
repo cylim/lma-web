@@ -47,7 +47,7 @@ const TemplateCreate: NextPage<TemplateCreateProps> = ({templateId}) => {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-primaryLigthen">
       <Head>
         <title>{t('title_1')} - {Constants.appName}</title>
       </Head>

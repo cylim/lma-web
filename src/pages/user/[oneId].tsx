@@ -34,7 +34,7 @@ const UserDetail: NextPage<UserDetailProps> = ({ oneId }) => {
   const renderTemplate = (item: TemplateCardProps) => <TemplateCard {...item} key={item?.title} withoutTitle withoutHover />
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-primaryLigthen">
       <Head>
         <title>About Us - {Constants.appName}</title>
       </Head>

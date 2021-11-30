@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 const Terms: NextPage = () => {
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-primaryLigthen">
       <Head>
         <title>Terms & Conditions - {Constants.appName}</title>
       </Head>

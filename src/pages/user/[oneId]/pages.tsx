@@ -25,7 +25,7 @@ const UserDetail: NextPage<UserDetailProps> = ({ oneId }) => {
   const renderLatestPage = (item: LatestPageListItemProps) => <LatestPageListItem key={item._id} {...item} />
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-primaryLigthen">
       <Head>
         <title>About Us - {Constants.appName}</title>
       </Head>

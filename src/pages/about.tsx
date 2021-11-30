@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 const AboutUs: NextPage = () => {
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-primaryLigthen">
       <Head>
         <title>About Us - {Constants.appName}</title>
       </Head>
