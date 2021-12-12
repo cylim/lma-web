@@ -42,7 +42,8 @@
     "title_1": "Pick the template",
     "title_2": "you love",
     "Start with": "Start with {title}",
-    "Preview": "Preview"
+    "Preview": "Preview",
+    "About": "About"
   },
   "TemplatesCreate": {
     "title_1": "Marketplace Details",
@@ -92,5 +93,9 @@
   "Offer": {
     "DECLINE": "DECLINE",
     "ACCEPT": "ACCEPT"
+  },
+  "TemplatesPreview": {
+    "Description": "Description:",
+    "View Details": "View Details"
   }
 }

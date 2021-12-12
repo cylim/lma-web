@@ -24,13 +24,13 @@ Modal.setAppElement('#modal-root');
 
 
 const UserRoutes = [
-  {routes: '/settings/profile', label: 'Profile'},
-  {routes: '/settings/stats', label: 'Analytics'},
-  {routes: '/user/<<id>>/pages', label: 'My Artist Page'},
-  {routes: '/user/<<id>>', label: 'My Collections'},
+  {route: '/settings/profile', label: 'Profile'},
+  {route: '/settings/stats', label: 'Analytics'},
+  {route: '/user/<<id>>/pages', label: 'My Artist Page'},
+  {route: '/user/<<id>>', label: 'My Collections'},
 ]
 
-const Header: NextPage = () => {
+const Header: NextPage<any> = ({ headerStyle, textStyle, buttonStyle}) => {
   const t = useTranslations('Header');
   const [showModal, setShowModal] = useState(false)
   const [connect, account, accError] = useAccount()
@@ -44,7 +44,7 @@ const Header: NextPage = () => {
     closeModal()
   }
 
-  const renderMenuItem = (item) => <Link href={item?.routes.replace('<<id>>', account.address)} passHref>
+  const renderMenuItem = (item: any) => <Link href={item?.route.replace('<<id>>', account.address)} passHref>
     <a className="hover:text-primary">{t(item.label)}</a>
   </Link>
 
@@ -58,22 +58,22 @@ const Header: NextPage = () => {
   return (
     <>
     <ErrorHeader status={accError} />
-    <div className="flex flex-row flex-wrap items-center justify-between w-full px-20 py-10 text-center">
+    <div className={`flex flex-row flex-wrap items-center justify-between w-full md:px-20 px-5 py-10 text-center ${headerStyle}`}>
       <Link href="/" passHref>
         <a className="flex flex-row items-center">
           <Image src="/logo.png" alt="LMA Logo" width={20} height={40} />
-          <span className="pl-5 text-xl font-bold">{t('title')}</span>
+          <span className={`pl-5 text-xl font-bold ${textStyle}`}>{t('title')}</span>
         </a>
       </Link>
 
       <div className="flex flex-row items-center text-base">
         <Link href="/templates" passHref>
-          <a className="mr-10  hover:text-primary">{t('Sell Your Art')}</a>
+          <a className={`mr-10 hover:text-primary ${textStyle}`}>{t('Sell Your Art')}</a>
         </Link>
         <Link href="/about" passHref>
-          <a className="mr-10  hover:text-primary">{t('About Us')}</a>
+          <a className={`mr-10 hover:text-primary ${textStyle}`}>{t('About Us')}</a>
         </Link>
-        {account ? renderUserName() : <IconButton title={t('Connect')} handlePress={toggleConnect} />}
+        {account ? renderUserName() : <IconButton title={t('Connect')} handlePress={toggleConnect} style={buttonStyle} />}
         
       </div>
       <Modal
@@ -91,6 +91,12 @@ const Header: NextPage = () => {
     </div>
     </>
   )
+}
+
+Header.defaultProps ={
+  headerStyle: '',
+  textStyle: '',
+  buttonStyle: '',
 }
 
 export default Header

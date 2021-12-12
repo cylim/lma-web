@@ -1,9 +1,7 @@
 const colors = require('tailwindcss/colors')
 
 module.exports = {
-  mode: 'jit',
-  purge: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: 'media', // or 'media' or 'class'
+  content: ['./src/pages/**/*.{js,ts,jsx,tsx}', './src/components/**/*.{js,ts,jsx,tsx}'],
   theme: {
     fontFamily: {
       sans: ['Nunito Sans', 'Segoe UI', 'Roboto', 'Oxygen', 'Fira Sans', 'sans-serif'],
@@ -33,15 +31,12 @@ module.exports = {
       borderWidth: {
         1: '1px',
       },
-    },
-  },
-  variants: {
-    extend: {
-      backdropBlur: ['hover', 'focus'],
-      backdropOpacity: ['hover', 'focus'],
-      backdropContrast: ['hover', 'focus'],
-      backdropBrightness: ['hover', 'focus'],
-      display: ["group-hover"],
+      height: {
+        "screen/2": "40vw",
+        "screen/3": "calc(100vw / 3)",
+        "screen/4": "calc(100vw / 4)",
+        "screen/5": "calc(100vw / 5)",
+      },
     },
   },
   plugins: [
