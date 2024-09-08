@@ -11,13 +11,13 @@
     "@harmony-js/core": "^0.1.57",
     "@metamask/detect-provider": "^1.2.0",
     "bn.js": "^5.2.0",
-    "next": "12.0.9",
+    "next": "12.2.3",
     "next-intl": "^2.3.4",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-modal": "^3.14.4",
     "tslib": "^2.3.1",
-    "web3": "^4.0.1"
+    "web3": "^4.12.0"
   },
   "devDependencies": {
     "@types/node": "16.11.8",
